@@ -4,11 +4,17 @@
 
 title: Project Overview
 permalink: /capstone/
+carousels:
+  - images: 
+    - image: /uploads/slider/disease_counts.png
+    - image: /uploads/slider/total_disease_counts.png
 ---
 
 
 ## Abstract
 In this study, we will be exploring the gut microbiome of Latin American immigrants to determine what factors of their gut microbiome affect metabolic diseases. The goal of our project is to determine what metabolic diseases/disorders an individual has based on their gut microbiome and other supporting information on the individual. To achieve our goal, we will be exploring machine learning and data analysis techniques to summarize the key points of the data and understand the patterns and relationships in the data. 
+
+![Pipeline](/uploads/img/pipeline.png)
 
 ## Introduction
 Metabolic diseases afflict millions of people in the US, with diseases such as diabetes, high blood pressure, and obesity affecting Latinos and other ethnic minority groups at a significantly higher rate. One factor contributing to this multifaceted disparity is the fact that minority groups are severely underrepresented in clinical research and health studies, resulting in a continued lack of insight and solutions for these groups. Our project seeks to further metabolic disease research and expand representation in such fields by studying how the gut microbiomes of Hispanic populations are correlated with the prevalence of certain diseases. As the field of gut microbiome research has grown, scientists have discovered links between gut microbiomes and diseases like diabetes and obesity, as well as differences in gut microbiomes by race and ethnicity (Duvallet, et al.; Ross, et al.). Machine learning solutions that can accurately determine these links and scale across diverse gut microbial populations could provide useful general and specific solutions for different diseases and different groups. As such, the main goal of our project is to use the Study of Latinos (SOL) gut microbiome dataset to implement and train machine learning models that can determine an individual’s metabolic disorders based on their gut microbiome. 
@@ -26,21 +32,30 @@ After dropping the samples with missing values and identifying the samples that 
 
 We will then do some preprocessing on the amount of features (columns) of our feature table. We plotted the count/frequency of samples that each feature appears on in our feature table dataset. By looking at this plot we see that alot of our features have very low sample frequencies, which means that theres a lot of irrelevant features/columns that have little importance and could be dropped in our data. 
 
-Insert Images/Plots here
+![Sample Frequencies](/uploads/img/sample_frequencies.jpg)
+![Freq Table](/uploads/img/freq_table.jpg)
+
 
 Within the 1750 samples, we can see in the graph below, pre-cvd had by far the lowest presence within our dataset, indicating that there might be a large class imbalance within the pre-cvd colum. This class imbalance will need to be addressed in our pre-processing in order to prevent our model from overfitting.
 
-Insert Plots Here 
+![Disease Counts](/uploads/img/disease_counts.png)
+
 
 After further data exploration, we found that many samples have varying amounts and varying combinations of diseases, as can be seen in the graph below, which means a binary classifier (predicting what disease someone has) would not work.
+![Multiple Diseases Counts](/uploads/img/total_disease_counts.png)
 
-Insert plot here
+## Dimensionality Reduction
+
 
 ## Machine Learning Models
 
+![Multi Label Model](/uploads/img/multi_label_model.png)
+
+
 ## Results
 
-## Dimensionality Reduction
+![Model Performance](/uploads/img/performance_metrics_seaborn.png)
+
 
 ## Model Performance
 
