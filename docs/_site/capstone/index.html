@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Project Overview | Multi-label Disease Prediction Based on Gut Microbiome</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="Project Overview" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<link rel="canonical" href="http://localhost:4000/capstone/" />
+<meta property="og:url" content="http://localhost:4000/capstone/" />
+<meta property="og:site_name" content="Multi-label Disease Prediction Based on Gut Microbiome" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Project Overview" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","headline":"Project Overview","url":"http://localhost:4000/capstone/"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Multi-label Disease Prediction Based on Gut Microbiome" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Multi-label Disease Prediction Based on Gut Microbiome</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a><a class="page-link" href="/capstone/">Project Overview</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="home"><h1 class="page-heading">Project Overview</h1><h2 id="abstract">Abstract</h2>
+<p>In this study, we will be exploring the gut microbiome of Latin American immigrants to determine what factors of their gut microbiome affect metabolic diseases. The goal of our project is to determine what metabolic diseases/disorders an individual has based on their gut microbiome and other supporting information on the individual. To achieve our goal, we will be exploring machine learning and data analysis techniques to summarize the key points of the data and understand the patterns and relationships in the data.</p>
+
+<h2 id="introduction">Introduction</h2>
+<p>Metabolic diseases afflict millions of people in the US, with diseases such as diabetes, high blood pressure, and obesity affecting Latinos and other ethnic minority groups at a significantly higher rate. One factor contributing to this multifaceted disparity is the fact that minority groups are severely underrepresented in clinical research and health studies, resulting in a continued lack of insight and solutions for these groups. Our project seeks to further metabolic disease research and expand representation in such fields by studying how the gut microbiomes of Hispanic populations are correlated with the prevalence of certain diseases. As the field of gut microbiome research has grown, scientists have discovered links between gut microbiomes and diseases like diabetes and obesity, as well as differences in gut microbiomes by race and ethnicity (Duvallet, et al.; Ross, et al.). Machine learning solutions that can accurately determine these links and scale across diverse gut microbial populations could provide useful general and specific solutions for different diseases and different groups. As such, the main goal of our project is to use the Study of Latinos (SOL) gut microbiome dataset to implement and train machine learning models that can determine an individual’s metabolic disorders based on their gut microbiome.</p>
+
+<h2 id="data-description">Data Description</h2>
+<p>For the purposes of this project, we will be using the gut microbiome dataset collected by the Study of Latinos (SOL). The SOL is a population-based study of Hispanic/Latino adults from the ages of 18-74 who were selected from randomly sampled census block areas within Chicago, IL; Miami, FL; Bronx, NY; San Diego, CA (Lavange, et al.). The study focused on gathering information on the health status of the US Latino/Hispanic population in order to address the lack of research on minorities. For our project, we will be using 1835 self-collected stool samples that is broken into two main parts, (1) the frequency table of genomic sequences and (2) the metadata. The dataset is available on Qiita (https://qiita.ucsd.edu/) ID: 11666.</p>
+
+<p>(1) A genomic sequence is the information given by an organism’s DNA/RNA, each column in our frequency table corresponds to an organism’s genomic sequence (in our case some sort of bacteria in our gut). The frequency table of genomic sequences counts the number of times that a unique genomic sequence appears in a sample.</p>
+
+<p>(2) The metadata contains information about the participants socioeconomic conditions, their country of origin, and their medical history which includes information about whether or not a given sample had a certain metabolic disease. A subset of the diseases will be selected as our classification targets and a few metadata columns such as age and gender will be used as features in addition to the entire feature table of genome sequences.</p>
+
+<h2 id="exploratory-data-analysis">Exploratory Data Analysis</h2>
+<p>After dropping the samples with missing values and identifying the samples that existed in both the feature table and metadata, we found 1750 samples that we could use for our analysis.</p>
+
+<p>We will then do some preprocessing on the amount of features (columns) of our feature table. We plotted the count/frequency of samples that each feature appears on in our feature table dataset. By looking at this plot we see that alot of our features have very low sample frequencies, which means that theres a lot of irrelevant features/columns that have little importance and could be dropped in our data.</p>
+
+<p>Insert Images/Plots here</p>
+
+<p>Within the 1750 samples, we can see in the graph below, pre-cvd had by far the lowest presence within our dataset, indicating that there might be a large class imbalance within the pre-cvd colum. This class imbalance will need to be addressed in our pre-processing in order to prevent our model from overfitting.</p>
+
+<p>Insert Plots Here</p>
+
+<p>After further data exploration, we found that many samples have varying amounts and varying combinations of diseases, as can be seen in the graph below, which means a binary classifier (predicting what disease someone has) would not work.</p>
+
+<p>Insert plot here</p>
+
+<h2 id="machine-learning-models">Machine Learning Models</h2>
+
+<h2 id="results">Results</h2>
+
+<h2 id="dimensionality-reduction">Dimensionality Reduction</h2>
+
+<h2 id="model-performance">Model Performance</h2>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>Overall, due to the difficulty of multi-label classification tasks, the high count of disease co-occurence, the complexity of microbiome and disease research, and the lack of substantial/balanced data, the results yielded by our model has a lot of room for improvement. The low accuracy of our model suggests a different multi-label machine learning model or further data pre-processing may be required.</p>
+
+<p>Even though our project did not yield our desired results, our project still contributes to the field of gut microbiome research by performing analysis with Python and commonly used Python packages, lowering the barrier of entry for other data scientists and equipping current researchers with new tools such as qiime2.</p>
+<h1 id="references">References</h1>
+</div>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Multi-label Disease Prediction Based on Gut Microbiome</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Multi-label Disease Prediction Based on Gut Microbiome</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/jekyll"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">jekyll</span></a></li><li><a href="https://www.twitter.com/jekyllrb"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">jekyllrb</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
