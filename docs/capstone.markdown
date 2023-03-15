@@ -1,8 +1,9 @@
 ---
 
-title: Project Overview
+title: Multi-label Disease Prediction Based on Gut Microbiome
 permalink: /capstone/
-
+description: UCSD HDSI Capstone Project
+author: Renaldy Herlim, Amando Jimenez, Emerson Chao
 ---
 
 ![Pipeline](/uploads/img/pipeline.png)
