@@ -2,21 +2,23 @@
 
 title: Multi-label Disease Prediction Based on Gut Microbiome
 permalink: /capstone/
-description: UCSD HDSI Capstone Project
+description: UCSD HDSI Capstone Project (Renaldy Herlim, Amando Jimenez, Emerson Chao)
 author: Renaldy Herlim, Amando Jimenez, Emerson Chao
 ---
 
-![Pipeline](/uploads/img/pipeline.png)
+
 
 ## Introduction
-Metabolic diseases afflict millions of people in the US, with diseases such as diabetes, high blood pressure, and obesity affecting Latinos and other ethnic minority groups at a significantly higher rate. One factor contributing to this multifaceted disparity is the fact that minority groups are severely underrepresented in clinical research and health studies. Our project seeks to further metabolic disease research and expand representation in such fields by studying how the gut microbiomes of Hispanic populations are correlated with the prevalence of certain diseases. Machine learning solutions that can accurately determine these links and scale across diverse gut microbial populations could provide useful solutions for different diseases and different groups. As such, the main goal of our project is to use the Study of Latinos (SOL) gut microbiome dataset to implement and train machine learning models that can determine an individual’s metabolic disorders based on their gut microbiome. To achieve our goal, we will utilize a binary-relevance model for each disease type to see if we can predict if an individual has that specified disease according to their microbiome factors. 
+Metabolic diseases afflict millions of people in the US, with diseases such as diabetes, high blood pressure, and obesity affecting Latinos and other ethnic minority groups at a significantly higher rate. Our project seeks to further metabolic disease research and expand representation in such fields by studying how the gut microbiomes of Hispanic populations are correlated with the prevalence of certain diseases. The main goal of our project is to use the Study of Latinos (SOL) gut microbiome dataset to implement and train machine learning models that can determine an individual’s metabolic disorders based on their gut microbiome. To achieve our goal, we will utilize a binary-relevance model for each disease type to see if we can predict the appearance of a disease in an individual according to their microbiome factors.
+
+![Pipeline](/uploads/img/pipeline.png) 
 
 ## Data Description
-For the purposes of this project, we will be using the gut microbiome dataset collected by the Study of Latinos (SOL). The SOL is a population-based study of Hispanic/Latino adults from the ages of 18-74 who were selected from randomly sampled census block areas within Chicago, IL; Miami, FL; Bronx, NY; San Diego, CA (Lavange, et al.). The study focused on gathering information on the health status of the US Latino/Hispanic population in order to address the lack of research on minorities. For our project, we will be using 1835 self-collected stool samples that is broken into two main parts, (1) the frequency table of genomic sequences and (2) the metadata. The dataset is available on Qiita (https://qiita.ucsd.edu/) ID: 11666.
+The SOL is a population-based study of Hispanic/Latino adults from the ages of 18-74 who were selected from randomly sampled census block areas in the US. For our project, we will be using 1835 self-collected stool samples that is broken into two main parts, (1) the frequency table of genomic sequences and (2) the metadata. The dataset is available on Qiita (https://qiita.ucsd.edu/) ID: 11666.
 
 (1) A genomic sequence is the information given by an organism's DNA/RNA, each column in our frequency table corresponds to an organism's genomic sequence (in our case some sort of bacteria in our gut). The frequency table of genomic sequences counts the number of times that a unique genomic sequence appears in a sample. 
 
-(2) The metadata contains information about the participants socioeconomic conditions, their country of origin, and their medical history which includes information about whether or not a given sample had a certain metabolic disease. A subset of the diseases will be selected as our classification targets and a few metadata columns such as age and gender will be used as features in addition to the entire feature table of genome sequences. 
+(2) The metadata, among other things, contains information about whether the participants had a certain metabolic disease. A subset of the diseases will be selected as our classification targets and a few metadata columns such as age and gender will be used as features in addition to the entire feature table of genome sequences. 
 
 
 ## Exploratory Data Analysis
@@ -73,13 +75,13 @@ As we can see in the table above, the majority of PERMANOVA tests computed had a
 
 ### Model Accuracies
 
-The plot below shows the performance of each individual gradient boosting binary classification model within our binary relevance model. The plot contains the overall accuracy, the macro-average, and micro-average area under the curve (AUC’s) for the model's receiver operating characteristic (ROC) curves. The overall accuracy measured the proportion of samples the model correctly predicted diseases for. The AUCs essentially measure our classifier’s ability to discriminate between positive and negative samples by measuring the true positive rate when given a decision threshold. The macro-average AUC is calculated by calculating the AUC for each class and then averaging the AUC overall the classes. The micro-average AUC is calculated by averaging across each sample, which essentially means that it uses every sample prediction to calculate the overall AUC. 
+The plot below shows the performance of each individual gradient boosting binary classification model within our binary relevance model. The plot contains the overall accuracy, the macro-average, and micro-average area under the curve (AUC’s) for the model's receiver operating characteristic (ROC) curves. 
 
 ![Model Performance](/uploads/img/performance_metrics_seaborn.png)
 
 As we can see by the results, the average overall accuracy of the models was about 60.9% and all the AUC’s are above 50% which means that every model performed better than random chance. Obesity and diabetes were the best performing models with an accuracy of about 67% and 69%, micro-average of about 70% and 73%, and macro-average of about 51% and 61%, respectively. The big difference between micro and macro-average AUC’s of the obesity model indicates that the model performs better on the majority class than on the minority class, which indicates that we may need to do more pre-processing to improve the results.
  
-In addition to more pre-processing, it’s possible that different choices of classifiers or models could be implemented to improve our task performance. As seen in the PERMANOVA test, there are significant and obvious differences between the metabolic diseases when looking at samples with only one disease. However, because the majority of our samples have multiple diseases, it is reasonable to assume the microbiome features would look very differently, requiring models or special inputs that recognize the how having multiple diseases can impact the features and vice versa. 
+It’s possible that different choices of classifiers or models could be implemented to improve our task performance. As seen in the PERMANOVA test, there are significant and obvious differences between the metabolic diseases when looking at samples with only one disease. However, because the majority of our samples have multiple diseases, it is reasonable to assume the microbiome features would look very differently, requiring models or special inputs that recognize the how having multiple diseases can impact the features and vice versa. 
 
 
 
