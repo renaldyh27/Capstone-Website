@@ -90,3 +90,4 @@ Overall, due to the difficulty of multi-label classification tasks, the high cou
 
 Even though our project did not yield our desired results, our project still contributes to the field of gut microbiome research by performing analysis with Python and commonly used Python packages, lowering the barrier of entry for other data scientists and equipping current researchers with new tools such as qiime2.
 
+[Link to Project Report]({{https://docs.google.com/document/d/1RF8QcENaKSzwU9JBpUG9NLzNH0yYWO-INE-HnXEVovE/edit?usp=sharing}})
